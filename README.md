@@ -41,5 +41,3 @@ Les stuctures sont définies dans les fichiers ```.hpp``` appelés ```weightedGr
 Ainsi, ces simplifications permettent d'avoir un graphe avec un minimum de noeuds et d'arêtes. En effet, les noueds sont des clusters de noeuds regroupés.
 
 # Exercice 3 (Dijkstra)
-
-*Rmq : type de retour = unordered_map avec distance jusqu'au sommet final, et parent (paire avec la distance et le prédécesseur du sommet pour reconstruire le chemain)*

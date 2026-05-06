@@ -54,6 +54,12 @@ std::unordered_map<IDType, std::pair<float, IDType>> Dijkstra(WeightedGraph cons
 
     /* TODO */
     
+    while (!to_visit.empty()) {
+        /*On récupère le sommet courant dans to_visit
+        On vérifie que c'est pas la fin
+        On regarde les voisins : ??*/
+    }
+
     return distances;
 }
 
