@@ -39,3 +39,7 @@ Les stuctures sont définies dans les fichiers ```.hpp``` appelés ```weightedGr
 - ```remove_degree_two_nodes_by_angle_threshold(graph, 30);``` : on enlève les noeuds de degré 2 (2 voisins) ayant un angle faible.
 
 Ainsi, ces simplifications permettent d'avoir un graphe avec un minimum de noeuds et d'arêtes. En effet, les noueds sont des clusters de noeuds regroupés.
+
+# Exercice 3 (Dijkstra)
+
+*Rmq : type de retour = unordered_map avec distance jusqu'au sommet final, et parent (paire avec la distance et le prédécesseur du sommet pour reconstruire le chemain)*
