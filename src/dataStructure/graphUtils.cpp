@@ -49,17 +49,39 @@ std::unordered_map<IDType, std::pair<float, IDType>> Dijkstra(WeightedGraph cons
     // priority queue of pair of current cost from starting node and current node id
     // this will sort node base on the cost (as pair are ordered with lexicographical order)
     min_priority_queue<std::pair<float, IDType>> to_visit {};
-
+    // Point de départ
+    distances[start].first = 0;
     to_visit.push({0.0f, start});
 
-    /* TODO */
-    
+    // On boucle tant qu'il n'y a plus de noeuds à parcourir
     while (!to_visit.empty()) {
-        /*On récupère le sommet courant dans to_visit
-        On vérifie que c'est pas la fin
-        On regarde les voisins : ??*/
-    }
+        // On récupère le dernier élément de la pile de priorité (noeuds à visiter)
+        auto const current {to_visit.top()};
+        to_visit.pop();
+        
+        // if current_node == end
+        //break
 
+        // Informations sur notre noeud actuel (current est un std::pair<float, IDType>)
+        float current_dist = current.first;
+        IDType current_node = current.second;
+
+        // On parcourt les voisins de notre noeud actuel (on récupère ces voisins dans le WeighedGraph graph)
+        for (auto const& neighbor : graph.get_neighbors(current_node)) {
+            // Informations sur le noeud voisin
+            // cf structure WeighedArc
+            IDType adjacent_node = neighbor.to;
+            float lenght_to_adjacent_node = neighbor.weight;
+            // Si on n'a pas déjà parcouru le noeud et si le chemin pour y arriver est plus petit que celui qu'on avait
+            if (!distances.contains(adjacent_node) ||
+                distances[adjacent_node].first > current_dist + lenght_to_adjacent_node) {
+                // On remplace le chemin qu'on avait par le chemin plus court qu'on a toruvé
+                distances[adjacent_node] = {current_dist + lenght_to_adjacent_node, adjacent_node};
+                // On l'a parcouru, on le supprime de la liste à parcourir
+                to_visit.push({current_dist + lenght_to_adjacent_node, adjacent_node});
+            }
+        }
+    }
     return distances;
 }
 

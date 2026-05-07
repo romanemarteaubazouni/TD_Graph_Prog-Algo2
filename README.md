@@ -41,3 +41,9 @@ Les stuctures sont définies dans les fichiers ```.hpp``` appelés ```weightedGr
 Ainsi, ces simplifications permettent d'avoir un graphe avec un minimum de noeuds et d'arêtes. En effet, les noueds sont des clusters de noeuds regroupés.
 
 # Exercice 3 (Dijkstra)
+
+## Références pour cet algo :
+
+- https://www.youtube.com/watch?v=V6H1qAeB-l4 (G-32. Algorithme de Dijkstra - Utilisation de la file d'attente prioritaire - C++ et Java)
+- https://www.algotree.org/algorithms/single_source_shortest_path/dijkstras_shortest_path_c++/
+- Cours sur les graphes
