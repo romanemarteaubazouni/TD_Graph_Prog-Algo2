@@ -78,7 +78,7 @@ std::unordered_map<IDType, std::pair<float, IDType>> Dijkstra(WeightedGraph cons
                 if (!distances.contains(adjacent_node) ||
                     distances[adjacent_node].first > current_dist + lenght_to_adjacent_node) {
                     // On remplace le chemin qu'on avait par le chemin plus court qu'on a toruvé
-                    distances[adjacent_node] = {current_dist + lenght_to_adjacent_node, adjacent_node};
+                    distances[adjacent_node] = {current_dist + lenght_to_adjacent_node, current_node};
                     // On l'a parcouru, on le supprime de la liste à parcourir
                     to_visit.push({current_dist + lenght_to_adjacent_node, adjacent_node});
                 }
